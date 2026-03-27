@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class CarController {
 
-    @GetMapping("/index")
+    @GetMapping("/testes")
     public String exibirFormulario(Model model) {
         model.addAttribute("carDTO", new CarDTO());
         return "index"; // Retorna o nome do template
