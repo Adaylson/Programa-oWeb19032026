@@ -29,6 +29,10 @@ public class HomeController {
 
     @PostMapping("/cars")
     public String createCar(CarDTO carDTO, BindingResult result) {
+        if (result.hasErrors()) {
+            return "index"; // Em caso de erro, retorna ao formulário com as mensagens
+        }
+
         carService.save(carDTO);
         return "redirect:/cars";
     }
